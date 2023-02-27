@@ -40,11 +40,11 @@ namespace Futar
                 {
                     string felhText = tbFelhasznalo.Text;
                     string jelszoText = tbJelszo.Text;
-                    string lekredezes = $"SELECT id, teljes_nev, nev, jelszo, admin FROM `felhasznalok` WHERE `nev` = '{felhText}' AND `jelszo` = '{jelszoText}';";
+                    string sql = $"SELECT id, teljes_nev, nev, jelszo, admin FROM `felhasznalok` WHERE `nev` = '{felhText}' AND `jelszo` = '{jelszoText}';";
 
                     adatbazis.Conn.Open();
 
-                    MySqlCommand select = new MySqlCommand(lekredezes, adatbazis.Conn);
+                    MySqlCommand select = new MySqlCommand(sql, adatbazis.Conn);
 
                     MySqlDataReader sorok = select.ExecuteReader();
 
@@ -70,7 +70,7 @@ namespace Futar
                     adatbazis.Conn.Close();
 
                     Hide();
-                    FormFo frmFo = new FormFo(adatbazis, felhasznalo);
+                    frmFo frmFo = new frmFo(adatbazis, felhasznalo);
                     frmFo.ShowDialog();
                 }
             }

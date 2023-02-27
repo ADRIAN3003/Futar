@@ -52,11 +52,17 @@
   <ItemGroup>
     <Compile Include="Adatbazis.cs" />
     <Compile Include="Felhasznalo.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FormAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBejelentkezes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBejelentkezes.Designer.cs">
+      <DependentUpon>FormBejelentkezes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormFo.cs">
       <SubType>Form</SubType>
@@ -64,13 +70,27 @@
     <Compile Include="FormFo.Designer.cs">
       <DependentUpon>FormFo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKuldemenyek.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKuldemenyek.Designer.cs">
+      <DependentUpon>FormKuldemenyek.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Partnerek.cs" />
+    <Compile Include="Futarok.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBejelentkezes.resx">
+      <DependentUpon>FormBejelentkezes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFo.resx">
       <DependentUpon>FormFo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKuldemenyek.resx">
+      <DependentUpon>FormKuldemenyek.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

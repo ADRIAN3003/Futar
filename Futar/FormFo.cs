@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Futar
 {
-    public partial class FormFo : Form
+    public partial class frmFo : Form
     {
         Adatbazis adatbazis;
         Felhasznalo felhasznalo;
 
-        public FormFo(Adatbazis adatbazis, Felhasznalo felhasznalo)
+        public frmFo(Adatbazis adatbazis, Felhasznalo felhasznalo)
         {
             InitializeComponent();
             this.adatbazis = adatbazis;
@@ -24,11 +24,35 @@ namespace Futar
             string userAccess = felhasznalo.Admin ? "Admin" : "User";
 
             Text = $"Főmenü - {felhasznalo.Teljesnev} ({userAccess})";
+
+            if (!felhasznalo.Admin)
+            {
+                btnAdmin.Enabled = false;
+                btnPartnerek.Enabled = false;
+                btnFutarok.Enabled = false;
+            }
         }
 
         private void FormFo_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnKilepes_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnKuldemenyek_Click(object sender, EventArgs e)
+        {
+            frmKuldemenyek frmKuldemenyek = new frmKuldemenyek(adatbazis);
+            frmKuldemenyek.ShowDialog();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            frmAdmin frmAdmin = new frmAdmin(adatbazis);
+            frmAdmin.ShowDialog();
         }
     }
 }
